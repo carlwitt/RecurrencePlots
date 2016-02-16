@@ -415,23 +415,14 @@ public class DRQA {
 
     public void writeRP(double[][] trajectory1, double[][] trajectory2, double fractionMaxPSTDiameter, String outpath) {
 
-<<<<<<< HEAD:src/main/java/de/uberspace/wittcarl/DRQA.java
         BufferedImage off_Image = getRPImage(trajectory1, trajectory2, fractionMaxPSTDiameter);
-=======
-        BufferedImage off_Image = getBufferedImage(trajectory1, trajectory2, fractionMaxPSTDiameter);
->>>>>>> origin/indefinite-lines-via-position:src/de/uberspace/wittcarl/DRQA.java
         File outputfile = new File(outpath);
         try { ImageIO.write(off_Image, "png", outputfile); } catch (IOException e) { e.printStackTrace(); }
 
     }
 
-<<<<<<< HEAD:src/main/java/de/uberspace/wittcarl/DRQA.java
     public static BufferedImage getRPImage(double[][] trajectory1, double[][] trajectory2, double fractionMaxPSTDiameter) {
         double eps = fractionMaxPSTDiameter * PhaseSpaceDistribution.maxPhaseSpaceDiameter(trajectory1, trajectory2);
-=======
-    public static BufferedImage getBufferedImage(double[][] trajectory1, double[][] trajectory2, double fractionMaxPSTDiameter) {
-        double eps = fractionMaxPSTDiameter * maxPhaseSpaceDiameter(trajectory1, trajectory2);
->>>>>>> origin/indefinite-lines-via-position:src/de/uberspace/wittcarl/DRQA.java
 
         // the phase space dimensionality
         final int dim = trajectory1.length;
@@ -641,8 +632,6 @@ public class DRQA {
 
     }
 
-<<<<<<< HEAD:src/main/java/de/uberspace/wittcarl/DRQA.java
-=======
     /**
      * Computes the maximum euclidean distance between any point on the first and any point on the second trajectory.
      * Quadratic runtime.
@@ -697,7 +686,6 @@ public class DRQA {
 
     }
 
->>>>>>> origin/indefinite-lines-via-position:src/de/uberspace/wittcarl/DRQA.java
     public double getDET_RR_RATIO(){
         double det_rr_ratio = diagonal_rqa_definite.get(HistogramStatistic.FILTER_RATIO) / recurrence_rate;
         return Double.isNaN(det_rr_ratio) ? -1 : det_rr_ratio;

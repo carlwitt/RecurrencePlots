@@ -261,14 +261,11 @@ public class DRQATest extends TestCase {
         }
     }
 
-<<<<<<< HEAD:src/test/java/de/uberspace/wittcarl/DRQATest.java
-=======
     /**
      * Compare approximate and exact diameter computation.
      * Approximate is very fast but provides only a rough upper bound.
      * For a discretized pairwise distance distribution, this is absolutely sufficient.
      */
->>>>>>> origin/indefinite-lines-via-position:tests/de/uberspace/wittcarl/DRQATest.java
     public void testMaxPhaseSpaceDiameter(){
 
         int tsLen = 25000;
@@ -277,22 +274,14 @@ public class DRQATest extends TestCase {
         double[][] ts = trajectories[4][0];
         System.out.println("Computing max phase space diameter.");
         long tic = System.currentTimeMillis();
-<<<<<<< HEAD:src/test/java/de/uberspace/wittcarl/DRQATest.java
         double diam = PhaseSpaceDistribution.maxPhaseSpaceDiameter(ts, ts);
-=======
-        double diam = DRQA.maxPhaseSpaceDiameter(ts, ts);
->>>>>>> origin/indefinite-lines-via-position:tests/de/uberspace/wittcarl/DRQATest.java
         System.out.println("diam = " + diam);
         long toc = System.currentTimeMillis();
         System.out.println(toc-tic);
 
         System.out.println("Computing max phase space diameter, approximate.");
         tic = System.currentTimeMillis();
-<<<<<<< HEAD:src/test/java/de/uberspace/wittcarl/DRQATest.java
         double diamApprox = PhaseSpaceDistribution.maxPhaseSpaceDiameterApproximate(ts);
-=======
-        double diamApprox = DRQA.maxPhaseSpaceDiameterApproximate(ts);
->>>>>>> origin/indefinite-lines-via-position:tests/de/uberspace/wittcarl/DRQATest.java
         System.out.println("diamApprox = " + diamApprox);
         toc = System.currentTimeMillis();
         System.out.println(toc-tic);
@@ -314,7 +303,6 @@ public class DRQATest extends TestCase {
 
     public void testPhaseSpaceApproxDistribution(){
 
-<<<<<<< HEAD:src/test/java/de/uberspace/wittcarl/DRQATest.java
         int tsLen = 500;
         TimeSeriesGenerator tsg = new TimeSeriesGenerator(1, tsLen, null);
         double[][][][] trajectories = tsg.getAllTrajectories();
@@ -322,28 +310,6 @@ public class DRQATest extends TestCase {
             double[][] ts = trajectories[systemIdx][0];
             long[] dist = PhaseSpaceDistribution.approximateDistanceDistribution(ts);
             System.out.println(Arrays.toString(dist));
-=======
-        int tsLen = 10_000;
-        TimeSeriesGenerator tsg = new TimeSeriesGenerator(1, tsLen, null);
-        double[][][][] trajectories = tsg.getAllTrajectories();
-        double upTo = 0.2;
-        int numBins = 100;
-        for (int systemIdx = 1; systemIdx < 2; systemIdx += 2) {
-            double[][] ts = trajectories[systemIdx][0];
-            long[] dist = DRQA.approximateDistanceDistribution(ts, numBins, upTo);
-            long sum = Arrays.stream(dist, 1, dist.length-1).sum() + tsLen;
-            long currentBound = 0;
-            for (int i = 0; i < dist.length; i++) {
-                double lower = upTo*currentBound / sum;
-                double threshold = i * Double.longBitsToDouble(dist[0]) / numBins;
-                System.out.println(threshold + " RR From: " + lower);
-                currentBound += i == 0 ? tsLen : dist[i];
-            }
-            System.out.println(Arrays.toString(dist));
-            DRQA drqa = new DRQA(ts, 1.2880748325012317);
-            drqa.computeRQA(2,2,2);
-            System.out.println("drqa.recurrence_rate = " + drqa.recurrence_rate);
->>>>>>> origin/indefinite-lines-via-position:tests/de/uberspace/wittcarl/DRQATest.java
         }
 
     }

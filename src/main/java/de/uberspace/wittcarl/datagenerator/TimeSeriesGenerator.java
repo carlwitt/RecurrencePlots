@@ -94,7 +94,6 @@ public class TimeSeriesGenerator {
      * Creates a copy of the trajectory with a normally distributed displacement added to each component.
      *
      * @param trajectory                     The phase space trajectory, first dimension is referring to the phase space dimension, second dimension to time step.
-<<<<<<< HEAD:src/main/java/de/uberspace/wittcarl/datagenerator/TimeSeriesGenerator.java
      * @param referenceThresholdFractionPSTD Specifies the recurrence threshold, as fraction of of the maximum phase space diameter.
      * @param noiseRatio                     The ratio between expected distance from original point and recurrence threshold. A ratio of 0 corresponds to no noise. A ratio of 1 corresponds to an expected displacement equal to the recurrence threshold.
      * @return A copy of the input data, with noise added.
@@ -134,47 +133,6 @@ public class TimeSeriesGenerator {
      * @param standardDeviation              The standard deviation of the normal distribution from which the components of the perturbation vector are drawn.
      * @return A copy of the input data, with noise added.
      */
-=======
-     * @param referenceThresholdFractionPSTD Specifies the recurrence threshold, as fraction of of the maximum phase space diameter.
-     * @param noiseRatio                     The ratio between expected distance from original point and recurrence threshold. A ratio of 0 corresponds to no noise. A ratio of 1 corresponds to an expected displacement equal to the recurrence threshold.
-     * @return A copy of the input data, with noise added.
-     */
-    public static double[][] addNoise(double[][] trajectory, double referenceThresholdFractionPSTD, double noiseRatio) {
-        final int dim = trajectory.length;
-
-        // the reference threshold is a fraction (usually 5%) of the phase space diameter (maximum distance between any two points on the phase space trajectory)
-        double trajectoryMaxDistance = DRQA.maxPhaseSpaceDiameter(trajectory, trajectory);
-        double referenceThreshold = referenceThresholdFractionPSTD * trajectoryMaxDistance;
-
-        // to assure that the expected distance between displaced point and original point equals a given value, use the expected value of the scaled chi distribution with dim degrees of freedom
-        double standardDeviation = Math.sqrt(2) * noiseRatio * referenceThreshold * Gamma.gamma(0.5 * dim) / Gamma.gamma(0.5 * (dim + 1));
-        return addNoiseWithSD(trajectory, noiseRatio, standardDeviation);
-    }
-
-    /**
-     * Creates a copy of the trajectory with a normally distributed displacement added to each component. Doesn't normalize the magnitude of the dimension vectors according to dimension (as addNoise does).
-     * @param trajectory                     The phase space trajectory, first dimension is referring to the phase space dimension, second dimension to time step.
-     * @param referenceThresholdFractionPSTD Specifies the recurrence threshold, as fraction of of the maximum phase space diameter.
-     * @param noiseRatio                     The ratio between expected distance from original point and recurrence threshold. A ratio of 0 corresponds to no noise. A ratio of 1 corresponds to an expected displacement equal to the recurrence threshold.
-     * @return A copy of the input data, with noise added.
-     */
-    public static double[][] addNoiseUncorrected(double[][] trajectory, double referenceThresholdFractionPSTD, double noiseRatio) {
-        // the reference threshold is a fraction (usually 5%) of the phase space diameter (maximum distance between any two points on the phase space trajectory)
-        double trajectoryMaxDistance = DRQA.maxPhaseSpaceDiameter(trajectory, trajectory);
-        double referenceThreshold = referenceThresholdFractionPSTD * trajectoryMaxDistance;
-
-        double standardDeviation = noiseRatio * referenceThreshold;
-        return addNoiseWithSD(trajectory, noiseRatio, standardDeviation);
-    }
-
-    /**
-     * Creates a copy of the trajectory with a normally distributed displacement added to each component.
-     * @param trajectory                     The phase space trajectory, first dimension is referring to the phase space dimension, second dimension to time step.
-     * @param noiseRatio                     The ratio between expected distance from original point and recurrence threshold. A ratio of 0 corresponds to no noise. A ratio of 1 corresponds to an expected displacement equal to the recurrence threshold.
-     * @param standardDeviation              The standard deviation of the normal distribution from which the components of the perturbation vector are drawn.
-     * @return A copy of the input data, with noise added.
-     */
->>>>>>> origin/indefinite-lines-via-position:src/de/uberspace/wittcarl/datagenerator/TimeSeriesGenerator.java
     public static double[][] addNoiseWithSD(double[][] trajectory, double noiseRatio, double standardDeviation) {
 
         final int dim = trajectory.length;
