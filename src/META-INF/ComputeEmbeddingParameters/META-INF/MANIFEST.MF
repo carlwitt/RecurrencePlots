@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: de.uberspace.wittcarl.executable.Compute_Embedding_Paramet
+ ers
+
