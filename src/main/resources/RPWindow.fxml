@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.chart.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
-<?import javafx.collections.FXCollections?>
 
-<VBox fx:id="mainWindowRoot" prefHeight="547.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uberspace.wittcarl.gui.RPWindowController">
+<VBox fx:id="mainWindowRoot" prefHeight="547.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uberspace.wittcarl.gui.RPWindowController">
    <children>
      <MenuBar VBox.vgrow="NEVER">
         <menus>
@@ -132,7 +146,7 @@
                               </HBox>
                            </content>
                            <graphic>
-                              <ChoiceBox fx:id="lineLengthTypeSelector" prefHeight="27.0" prefWidth="36.0" />
+                              <ChoiceBox fx:id="lineLengthTypeSelector" minWidth="100.0" prefHeight="27.0" prefWidth="36.0" />
                            </graphic>
                         </Tab>
                         <Tab closable="false" text="DD">
@@ -147,7 +161,7 @@
                                </LineChart>
                            </content>
                            <graphic>
-                              <ChoiceBox fx:id="distanceDistributionSelector" prefHeight="27.0" prefWidth="91.0" />
+                              <ChoiceBox fx:id="distanceDistributionSelector" minWidth="100.0" prefHeight="27.0" prefWidth="91.0" />
                            </graphic>
                                 </Tab>
                      </tabs>

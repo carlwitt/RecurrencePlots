@@ -9,7 +9,7 @@ package de.uberspace.wittcarl.executable;
  *  The points on the phase space trajectory are assigned zero based indices.
  *  The recurrence matrix at row i and column j refers to the distance between the i-th and j-th point on the phase space trajectory.
  *
- * [1] Carl Witt, "Recurrence Plot Clustering", Masters Thesis, Humboldt-Universiät zu Berlin, 2015.
+ * [1] Carl Witt, "Recurrence Plot Clustering", Masters Thesis, Humboldt-Universität zu Berlin, 2015.
  *
  */
 

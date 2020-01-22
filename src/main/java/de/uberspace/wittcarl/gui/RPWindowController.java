@@ -29,7 +29,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -263,14 +262,15 @@ public class RPWindowController implements Initializable {
     }
 
     @FXML public void saveRPImage(){
-        throw new NotImplementedException();
+        new Alert(Alert.AlertType.ERROR, "Feature not implemented.");
+//        throw new Exception("Feature not implemented.");
 //        fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("PNG Image (*.png)", "*.png"));
 //        File out = fileChooser.showSaveDialog(stage);
         // if(out != null) out.getPath();
     }
 
     @FXML public void saveCRTImage(){
-        throw new NotImplementedException();
+        new Alert(Alert.AlertType.ERROR, "Feature not implemented.");
 //        fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("PNG Image (*.png)", "*.png"));
 //        File out = fileChooser.showSaveDialog(stage);
         // if(out != null) out.getPath();

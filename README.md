@@ -1,19 +1,19 @@
 # Recurrence Plots
 Software for interactively exploring Recurrence Analysis as a tool for time series analysis. Live visualization of time series and their Recurrence Plots while playing around with recurrence parameters.
 
-The software can be used interactively and as a command line tool for time series processing. I wrote both parts for my master's thesis. Therefore, this is not an attempt to implement a comprehensive tool set for Recurrence Analysis (JRPs, automated selection of parameters, etc.) but rather an environment to try the new concepts developed in my master's thesis. For comprehensive implementation of standard recurrence analysis, very nice python packages have emerged [2,3].
+The software can be used interactively and as a command line tool for time series processing. I wrote both parts for my master's thesis. Therefore, this is not an attempt to implement a comprehensive tool set for Recurrence Analysis (JRPs, automated selection of parameters, etc.) but rather an environment to try the new concepts developed in my master's thesis. For comprehensive implementation of standard recurrence analysis, very nice python packages have emerged meanwhile: [PyRQA](https://pypi.org/project/PyRQA/) and [PyUnicorn](http://www.pik-potsdam.de/~donges/pyunicorn/).
 
 # Recurrence Analysis
 
 Recurrence Analysis is an approach to characterize multi-dimensional time series by means of self-similarity. For instance, the length, frequencies, and number of different reocurring motifs can be used to classify time series. The very basic approach is to compute the distance between all pairs of points and plot the resulting matrix. For instance, approximate repetitions in the signal then lead to diagonal lines in this Recurrence Plot. A Recurrence Plot can be characterized by a variety of features, such as average diagonal line lengths. This is then referred to as Recurrence Quantification Analysis (RQA). The RQA measures also are related to concepts in chaos theory and theoretical physics. A good introduction is given in [1].
 
 ## Deviation from traditional RQA definitions
-The definition of line structures underlying the computation of Recurrence Quantification Analysis (RQA) measures differs from the traditional definition, as also explained in my blog post [5].
+The definition of line structures underlying the computation of Recurrence Quantification Analysis (RQA) measures differs from the traditional definition, as also explained in my [blog post](http://carl-witt.de/edge-cases-in-rqa/).
 Line structures that are incident with the borders of the Recurrence Matrix are only considered in measures that utilize the minimum length of a line (like Determinism or Laminarity).
 They are not used in measures that utilize the concrete length of a line (since the endpoint of the line lies outside the Recurrence Matrix).
 However, for larger Recurrence Plots the difference should be negligible.
 
-In addition, the software computes, visualizes, and exports a new approach to recurrence quantification,the Conditional Recurrence Plot [4].
+In addition, the software computes, visualizes, and exports a new approach to recurrence quantification, the [Conditional Recurrence Plot](http://carl-witt.de/conditional-recurrence-time/).
 
 # Implementation
 
@@ -31,14 +31,6 @@ The software has some functionality to run computations in parallel and write th
 # References
 
 [1] Marwan, Norbert, M. Carmen Romano, Marco Thiel, and Jürgen Kurths. "Recurrence plots for the analysis of complex systems." Physics reports 438, no. 5-6 (2007): 237-329.
-
-[2] https://pypi.org/project/PyRQA/
-
-[3] http://www.pik-potsdam.de/~donges/pyunicorn/
-
-[4] http://carl-witt.de/conditional-recurrence-time/
-
-[5] http://carl-witt.de/edge-cases-in-rqa/
 
 # Disclaimer
 

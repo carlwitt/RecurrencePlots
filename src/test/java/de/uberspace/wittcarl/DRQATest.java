@@ -1,9 +1,6 @@
 package de.uberspace.wittcarl;
 
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
-import com.vividsolutions.jts.algorithm.MinimumDiameter;
-import com.vividsolutions.jts.geom.*;
-import com.vividsolutions.jts.geom.impl.CoordinateArraySequence;
 import de.uberspace.wittcarl.datagenerator.TimeSeriesGenerator;
 import de.uberspace.wittcarl.phasespace.PhaseSpaceDistribution;
 import junit.framework.TestCase;
